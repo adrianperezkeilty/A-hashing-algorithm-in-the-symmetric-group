@@ -15,6 +15,7 @@
 - Python implementation of hash_sn plus utilities and tests
   
   hash_sn.py                 -> hashing algorithm + tests
+  
   two_block_attack_hash_sn   -> Simulate 2-block attack for small sizes (16-bit, 24-bit etc)
   finite_field_arithmetic.py -> compute inverses modulo a prime using Fermat's little theorem
 
