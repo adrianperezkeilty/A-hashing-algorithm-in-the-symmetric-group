@@ -34,6 +34,8 @@ typedef boost::basic_format<char> boost_string;
 
 using namespace std;
 
+typedef basic_string<unsigned char> ustring;
+
 class HASH_SN
 {
 	public:
@@ -49,11 +51,15 @@ class HASH_SN
 	
 	uint8_t fact_j,j;
 	uint i;
-	int8_t h,l;
+	int8_t h,l,val;
 	
 	static inline uint132 p1=1;
 	static inline uint132 p2=(p1<<131)-347; 
 	static inline uint132 p=p2+(p1<<131); // p -> prime
+	
+	inline const unsigned char *uc_str(const char *s){
+	return reinterpret_cast<const unsigned char*>(s);
+	}
 	
 	const static uint8_t block_size=16;
 	const static uint8_t half_block_size=block_size/2;
@@ -68,7 +74,7 @@ class HASH_SN
 	char M_char;
 	
 	uint132 fact[t];
-	uint8_t a[t],b[t],b_aux[t],buf_a_rotate_b[t];
+	uint8_t a[t],b[t],b_aux[t],buf_a_rotate_b[t],a_index[t];
 	
 	void hash_blocks(string str);
 	void a_rotate_b(uint8_t*,uint8_t*,uint8_t*,uint8_t);
