@@ -8,7 +8,7 @@
 
 */
 
-#include "hash_sn1.h"
+#include "hash_sn.h"
 
 using namespace std;
 
