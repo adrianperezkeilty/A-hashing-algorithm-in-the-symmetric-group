@@ -8,7 +8,7 @@
 
 */
 
-#include "hash_sn.h"
+#include "hash_sn1.h"
 
 using namespace std;
 
@@ -75,13 +75,19 @@ void HASH_SN::hash_blocks(string M){
 		
 	};
 	
+	// Reverse last block*2^64
 	k=k<<64;
 	count=count_block_size;
 		
 	// Initial value -> (Reverse last block*2^64)<<len_orig* 2^64
 	int_to_per(fact,b,static_cast<uint132>(len_orig)<<64,e,t);
 	int_to_per(fact,a,k,e,t);
-	a_rotate_b(a,b,buf_a_rotate_b,t);
+	
+	for(h=0;h<t;h++){
+		a_index[a[h]]=h;
+	};
+	
+	a_rotate_b_inv(a,b,buf_a_rotate_b,t);
 	
 	// First character, loop case i=0
 	k=M[0];
@@ -100,6 +106,7 @@ void HASH_SN::hash_blocks(string M){
 			
 			k_last*=n;
 			k_last%=p;
+			
 			int_to_per(fact,b,n,e,t);
 			
 			if(buf_a_rotate_b[(i-1)%t]%2){
@@ -108,6 +115,7 @@ void HASH_SN::hash_blocks(string M){
 			else {
 				a_rotate_b(buf_a_rotate_b,b,buf_a_rotate_b,t);
 			}
+			
 			n=0;
 			count=count_block_size;
 		}
@@ -119,11 +127,16 @@ void HASH_SN::hash_blocks(string M){
 	k_last*=n;
 	k_last%=p;
 	int_to_per(fact,b,n,e,t);
-	a_rotate_b(buf_a_rotate_b,b,buf_a_rotate_b,t);
+	if(buf_a_rotate_b[(i-1)%t]%2){
+		a_rotate_b_inv(buf_a_rotate_b,b,buf_a_rotate_b,t);
+	}
+	else {
+		a_rotate_b(buf_a_rotate_b,b,buf_a_rotate_b,t);
+	}
 	
-	// Last state: k_last >> buf_a_rotate_b
+	// Last state: k_last << buf_a_rotate_b
 	int_to_per(fact,a,static_cast<uint132>(k_last),e,t);
-	a_rotate_b(a,buf_a_rotate_b,buf_a_rotate_b,t);
+	a_rotate_b_inv(a,buf_a_rotate_b,buf_a_rotate_b,t);
 	
 	//Hash resulting from computing last state of a>>b modulo 2^128
 	output_hex=boost::format("%1$032x") %(per_to_int(buf_a_rotate_b,e,t)%two_pow_128);
@@ -154,13 +167,15 @@ void HASH_SN::a_rotate_b(uint8_t a[],uint8_t b[],uint8_t buf_a_rotate_b[],uint8_
                 b_aux[l]=b[l];
             };
             for(l=0;l<t;l++){
-                b[l]=b_aux[index_array(a,t-1-a[l],t)];
+				b[l]=b_aux[a_index[t-1-a[l]]];
             }
         }
 
     };
 	for(h=0;h<t;h++){
-		buf_a_rotate_b[h]=b[h];
+		val=b[h];
+		buf_a_rotate_b[h]=val;
+		a_index[val]=h;
 	};
 };
 
@@ -193,13 +208,14 @@ void HASH_SN::a_rotate_b_inv(uint8_t a[],uint8_t b[],uint8_t buf_a_rotate_b[],ui
                 b_aux[l]=b[l];
             };
             for(l=0;l<t;l++){
-				
-                b[l]=b_aux[index_array(a,t-1-a[l],t)];
+				b[l]=b_aux[a_index[t-1-a[l]]];
             };
         };
     };
 	for(h=0;h<t;h++){
-		buf_a_rotate_b[h]=b[h];
+		val=b[h];
+		buf_a_rotate_b[h]=val;
+		a_index[val]=h;
 	};
 };
 
