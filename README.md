@@ -71,3 +71,20 @@ We develop a hashing algorithm based on these operations by encoding blocks into
 ```
 >>> hash_testing.avalanche(a, b, s, t)
 ```
+- Simulate the domain of hashing one single block (block size = 16 bits) and collisions encountered:
+
+```
+>>> hash_testing.one_block_domain(s, t)
+```
+
+- Plot a range $R$ of mappings $a\gg b$:
+
+```
+>>> hash_testing.randomness(t,R)
+```
+
+- Block cipher construction:
+
+```
+>>> hash_testing.block_cipher_encrypt(block, key, s, t)
+```
