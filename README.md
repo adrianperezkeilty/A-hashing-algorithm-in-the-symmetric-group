@@ -3,7 +3,7 @@
 Implementations based on the MSc thesis 'A hashing algorithm based on a one-way function in the symmetric group' :      
 https://lnu.diva-portal.org/smash/record.jsf?pid=diva2%3A1662325&dswid=5727
 
-Two new operations (\>>) and (\<<) work as one way functions in the sense that given $b\ll a$
+Two new operations (\>>) and (\<<) work as one way functions in the sense that given $b$ and $b\ll a$
 
 
 ## C++ implementation
