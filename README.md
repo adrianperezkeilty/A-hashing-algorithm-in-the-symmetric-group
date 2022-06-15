@@ -62,7 +62,7 @@ We develop a hashing algorithm based on these operations by encoding blocks into
   ```
 ### Empirical tests  
   
-- The density distribution $\big(S_n\,\big/\sim\big)={\big|[a]\big|:a\in S_t$\}:
+- The density distribution $\big(S_n\big/\sim\big)$=\{$\big|[a]\big|:a\in S_t$\}:
 ```
 >>> hash_testing.classes(t)
 ```
