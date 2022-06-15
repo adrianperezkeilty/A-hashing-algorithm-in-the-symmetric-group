@@ -1,6 +1,6 @@
 # Hash_sn
 
-## - C++ implementation of a hashing function based on a one way function in the symmetric group.
+## C++ implementation
   
   The Boost library is needed for the compilation (https://www.boost.org/).
   
@@ -10,9 +10,9 @@
   C:\path> hash_sn.exe digest_message.txt  
   Reading file...  
   Digesting message...  
-  Hash of digest_message.txt:528a81a97baa7d4f4a08465852ce7369  
+  Hash of digest_message.txt: 528a81a97baa7d4f4a08465852ce7369  
 
-## - Python implementation of hash_sn + empirical tests.
+## Python implementation of hash_sn + empirical tests.
   
   hash_sn.py                  -> hashing algorithm    
   hash_aux.py                 -> Auxiliary functions for hash_sn  
@@ -20,7 +20,7 @@
   two_block_attack_hash_sn.py -> Simulate 2-block attack for small sizes (16-bit, 24-bit etc),  
   finite_field_arithmetic.py  -> compute inverses modulo a prime using Fermat's little theorem.  
   
-    Parameters: 
+  Parameters: 
   m -> String to hash  
   s -> Block size (128,256,512,1024...)  
   t -> Factorial for embedding in the symmetric group. If s=128, then t>34  
