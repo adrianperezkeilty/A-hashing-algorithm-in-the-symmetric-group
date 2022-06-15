@@ -3,6 +3,9 @@
 Implementations based on the MSc thesis 'A hashing algorithm based on a one-way function in the symmetric group' :      
 https://lnu.diva-portal.org/smash/record.jsf?pid=diva2%3A1662325&dswid=5727
 
+Two new operations (\>>) and (\<<) work as one way functions in the sense that given $a$
+
+
 ## C++ implementation
   
   Files:  
@@ -36,6 +39,7 @@ https://lnu.diva-portal.org/smash/record.jsf?pid=diva2%3A1662325&dswid=5727
   two_block_attack_hash_sn.py -> Simulate 2-block attack for small sizes (16-bit, 24-bit etc),  
   finite_field_arithmetic.py  -> Compute inverses modulo a prime using Fermat's little theorem.  
   
+### Obtain hashing value of string  
   Parameters:  
   m -> String to hash  
   s -> Block size (128,256,512,1024...)  
@@ -48,4 +52,5 @@ https://lnu.diva-portal.org/smash/record.jsf?pid=diva2%3A1662325&dswid=5727
   >>> hash_sn.hash_sn('hello',128,35,2**132-347).hash()  
   'e9aad33fac20ca525bec545487db3456' 
   ```
-
+### Empirical tests  
+  
