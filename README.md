@@ -41,20 +41,20 @@ We develop a hashing algorithm based on these operations by encoding blocks into
   two_block_attack_hash_sn.py -> Simulate 2-block attack for small sizes (16-bit, 24-bit etc),  
   finite_field_arithmetic.py  -> Compute inverses modulo a prime using Fermat's little theorem.  
   
-### Obtain hashing value of string  
-  Parameters:  
+### Obtain hashing value of string
+  - Parameters:  
   m -> String to hash  
   s -> Block size (128, 256, 512, 1024...)  
   t -> Factorial for embedding in the symmetric group. If s=128, then t>34.  
   p -> Prime between s and t! (https://bigprimes.org/).  
 
-  Small string digest example:  
+  - Small string digest example:  
   ```
   >>> p = 9272585787985760943894005456578885141087
   >>> hash_sn.hash_sn('The quick brown fox jumps over the lazy dog',128 ,35, p).hash()
   'f308af47709e72a537c1545eb91d0e67'
   ```
-  File digest example:
+  - File digest example:
   ```
   >>> p = 1288079068764670493881163748072332651218703668359555082283935082653270651535749
   >>> hash_sn.hash_sn(open('digest_message.txt').read(), 256, 58, p).hash()
@@ -62,4 +62,7 @@ We develop a hashing algorithm based on these operations by encoding blocks into
   ```
 ### Empirical tests  
   
-The density distribution \{$\big|[a]\big|:a\in S_n$\}
+- The density distribution \{$\big|[a]\big|:a\in S_t$\}:
+```
+>>> hash_testing.classes(t)
+```
