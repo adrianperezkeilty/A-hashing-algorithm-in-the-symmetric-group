@@ -10,7 +10,6 @@ Two new operations $(\gg, \ll)$ work as mirrored one way functions in $S_n$ , in
 
 ## C++ implementation
   
-  Files:  
   main.cpp  
   hash_sn.cpp  
   hash_sn.h  
