@@ -1,5 +1,7 @@
 # Hash_sn
 
+Implementations based on the MSc thesis https://lnu.diva-portal.org/smash/record.jsf?pid=diva2%3A1662325&dswid=5727
+
 ## C++ implementation
   
   The Boost library is needed for the compilation (https://www.boost.org/).
