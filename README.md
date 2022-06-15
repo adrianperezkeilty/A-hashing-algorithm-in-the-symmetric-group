@@ -48,12 +48,14 @@ We develop a hashing algorithm based on these operations by encoding blocks into
   t -> Factorial for embedding in the symmetric group. If s=128, then t>34.  
   p -> Prime between s and t! (https://bigprimes.org/).  
 
-  Example:  
+  Small string digest:  
   ```
   >>> import hash_sn  
   >>> hash_sn.hash_sn('hello',128,35,2**132-347).hash()  
   'e9aad33fac20ca525bec545487db3456' 
-  >>>
+  ```
+  File digest:
+  ```
   >>> p=1288079068764670493881163748072332651218703668359555082283935082653270651535749
   >>> hash_sn.hash_sn(open('digest_message.txt').read(), 256, 58, p).hash()
   '94d6f93bfc4b68cc941ad6ba2a6209c5f5479df07a64fc8c093674eb760dc363'
