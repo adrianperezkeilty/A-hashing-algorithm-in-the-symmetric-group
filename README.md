@@ -1,7 +1,6 @@
 # A hashing algorithm in the symmetric group
 
-Implementations based on the MSc thesis "A hashing algorithm based on a one-way function in the symmetric group" :      
-https://lnu.diva-portal.org/smash/record.jsf?pid=diva2%3A1662325&dswid=5727
+Implementations based on the MSc thesis <cite>[][1]</cite>
 
 Two new operations $(\gg, \ll)$ work as mirrored one way functions in $S_n$ , in the sense that:  
   - Given $b$ and $a\gg b$ or $b\ll a$ it is hard to retrieve $a$.  
@@ -62,7 +61,9 @@ We develop a hashing algorithm based on these operations by encoding blocks into
   ```
 ### Empirical tests  
   
-- The density distribution of the classes of $\big(S_n\big/\sim\big)$=$\big\{[a]:a\in S_t\big\}$:
+- The density distribution of the classes of $\big(S_n\big/\sim\big)$ (see Section 2.4 of ):
 ```
 >>> hash_testing.classes(t)
 ```
+[1]: "A hashing algorithm based on a one-way function in the symmetric group" :      
+https://lnu.diva-portal.org/smash/record.jsf?pid=diva2%3A1662325&dswid=5727
