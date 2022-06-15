@@ -3,7 +3,8 @@
 Implementations based on the MSc thesis 'A hashing algorithm based on a one-way function in the symmetric group' :      
 https://lnu.diva-portal.org/smash/record.jsf?pid=diva2%3A1662325&dswid=5727
 
-Two new operations (\>>) and (\<<) work as one way functions in the sense that given $b$ and $a\gg b$ or $b\ll a$
+Two new operations (\>>) and (\<<) work as one way functions in $S_n$ in the sense that given $b$ and $a\gg b$ or $b\ll a$ it is hard to retrieve $a$ and 
+\[x=mc^2\]
 
 
 ## C++ implementation
