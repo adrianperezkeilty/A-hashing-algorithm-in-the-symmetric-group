@@ -50,8 +50,9 @@ We develop a hashing algorithm based on these operations by encoding blocks into
 
   Small string digest:  
   ```
-  >>> hash_sn.hash_sn('hello',128,35,2**132-347).hash()  
-  'e9aad33fac20ca525bec545487db3456' 
+  >>> p = 9272585787985760943894005456578885141087
+  >>> hash_sn.hash_sn('The quick brown fox jumps over the lazy dog',128 ,35, p).hash()
+  'f308af47709e72a537c1545eb91d0e67'
   ```
   File digest:
   ```
