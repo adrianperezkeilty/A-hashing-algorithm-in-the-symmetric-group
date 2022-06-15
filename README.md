@@ -1,6 +1,6 @@
 # Hash_sn
 
-Implementations based on the MSc thesis 'A hashing algorithm based on a one-way function in the symmetric group'.    
+Implementations based on the MSc thesis 'A hashing algorithm based on a one-way function in the symmetric group':      
 https://lnu.diva-portal.org/smash/record.jsf?pid=diva2%3A1662325&dswid=5727
 
 ## C++ implementation
