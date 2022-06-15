@@ -1,6 +1,6 @@
 # A hashing algorithm in the symmetric group
 
-Implementations based on the MSc thesis <cite>[][1]</cite>
+Implementations based on the MSc thesis <cite>[1]</cite>
 
 Two new operations $(\gg, \ll)$ work as mirrored one way functions in $S_n$ , in the sense that:  
   - Given $b$ and $a\gg b$ or $b\ll a$ it is hard to retrieve $a$.  
