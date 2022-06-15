@@ -46,7 +46,7 @@ We develop a hashing algorithm based on these operations by encoding blocks into
   m -> String to hash  
   s -> Block size (128, 256, 512, 1024...)  
   t -> Factorial for embedding in the symmetric group. If s=128, then t>34.  
-  p -> Prime between s and t!.    
+  p -> Prime between s and t! (https://bigprimes.org/).  
 
   Example:  
   ```
