@@ -16,7 +16,7 @@
 
 ## Python implementation of hash_sn + empirical tests.
   
-  hash_sn.py                  -> hashing algorithm    
+  hash_sn.py                  -> Hashing algorithm    
   hash_aux.py                 -> Auxiliary functions for hash_sn  
   hash_testing.py             -> Empirical tests on the S_n constructions (>>, <<)  
   two_block_attack_hash_sn.py -> Simulate 2-block attack for small sizes (16-bit, 24-bit etc),  
@@ -25,8 +25,8 @@
   Parameters:  
   m -> String to hash  
   s -> Block size (128,256,512,1024...)  
-  t -> Factorial for embedding in the symmetric group. If s=128, then t>34  
-  p -> Prime between s and t!  
+  t -> Factorial for embedding in the symmetric group. If s=128, then t>34.  
+  p -> Prime between s and t!.    
 
   Execution:  
   \>>> import hash_sn  
