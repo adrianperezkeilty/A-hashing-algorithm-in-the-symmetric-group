@@ -6,14 +6,20 @@
   
   Example on windows command line:  
   
-  Compilation: g++ main.cpp hash_sn.cpp -I"include" -o hash_sn.exe  
+  Compilation: 
   
+  ```
+  C:\path>g++ main.cpp hash_sn.cpp -I"include" -o hash_sn.exe  
+  ```
   Execution:  
+  
+  ```
   C:\path> hash_sn.exe digest_message.txt  
   Reading file...  
   Digesting message...  
   Hash of digest_message.txt: 528a81a97baa7d4f4a08465852ce7369  
-
+  ``` 
+  
 ## Python implementation of hash_sn + empirical tests.
   
   hash_sn.py                  -> Hashing algorithm    
@@ -30,8 +36,8 @@
 
   Example:  
   ```
-  \>>> import hash_sn  
-  \>>> hash_sn.hash_sn('hello',128,35,2**132-347).hash()  
+  >>> import hash_sn  
+  >>> hash_sn.hash_sn('hello',128,35,2**132-347).hash()  
   'e9aad33fac20ca525bec545487db3456' 
   ```
 
