@@ -22,7 +22,7 @@
   two_block_attack_hash_sn.py -> Simulate 2-block attack for small sizes (16-bit, 24-bit etc),  
   finite_field_arithmetic.py  -> Compute inverses modulo a prime using Fermat's little theorem.  
   
-  Parameters: 
+  Parameters:  
   m -> String to hash  
   s -> Block size (128,256,512,1024...)  
   t -> Factorial for embedding in the symmetric group. If s=128, then t>34  
