@@ -5,6 +5,11 @@ https://lnu.diva-portal.org/smash/record.jsf?pid=diva2%3A1662325&dswid=5727
 
 ## C++ implementation
   
+  Files:  
+  main.cpp  
+  hash_sn.cpp  
+  hash_sn.h  
+  
   The Boost library is needed for the compilation (https://www.boost.org/).
   
   Example on windows command line:  
