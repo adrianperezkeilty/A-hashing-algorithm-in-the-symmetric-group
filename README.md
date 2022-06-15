@@ -28,7 +28,7 @@
   t -> Factorial for embedding in the symmetric group. If s=128, then t>34.  
   p -> Prime between s and t!.    
 
-  Execution:  
+  Example:  
   \>>> import hash_sn  
   \>>> hash_sn.hash_sn('hello',128,35,2**132-347).hash()  
   'e9aad33fac20ca525bec545487db3456' 
