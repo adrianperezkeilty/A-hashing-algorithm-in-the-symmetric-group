@@ -29,7 +29,9 @@
   p -> Prime between s and t!.    
 
   Example:  
+  ```
   \>>> import hash_sn  
   \>>> hash_sn.hash_sn('hello',128,35,2**132-347).hash()  
   'e9aad33fac20ca525bec545487db3456' 
+  ```
 
