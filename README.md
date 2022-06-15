@@ -50,7 +50,6 @@ We develop a hashing algorithm based on these operations by encoding blocks into
 
   Small string digest:  
   ```
-  >>> import hash_sn  
   >>> hash_sn.hash_sn('hello',128,35,2**132-347).hash()  
   'e9aad33fac20ca525bec545487db3456' 
   ```
