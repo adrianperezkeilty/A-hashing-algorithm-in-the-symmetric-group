@@ -28,7 +28,7 @@ https://lnu.diva-portal.org/smash/record.jsf?pid=diva2%3A1662325&dswid=5727
   Hash of digest_message.txt: 528a81a97baa7d4f4a08465852ce7369  
   ``` 
   
-## Python implementation of hash_sn + empirical tests.
+## Python implementation + empirical tests.
   
   hash_sn.py                  -> Hashing algorithm    
   hash_aux.py                 -> Auxiliary functions for hash_sn  
