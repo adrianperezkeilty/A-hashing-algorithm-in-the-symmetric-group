@@ -62,7 +62,7 @@ We develop a hashing algorithm based on these operations by encoding blocks into
   ```
 ### Empirical tests (see Section 2.4 of the thesis)
   
-- Given a construction of ($\gg), plot the density distribution of the classes of $\big(S_n\big/\sim\big)$:
+- Given a construction of ($\gg$), plot the density distribution of the classes of $\big(S_n\big/\sim\big)$:
 ```
 >>> hash_testing.classes(t)
 ```
