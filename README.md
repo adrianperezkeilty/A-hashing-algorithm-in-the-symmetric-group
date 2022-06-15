@@ -83,7 +83,7 @@ We develop a hashing algorithm based on these operations by encoding blocks into
 >>> hash_testing.randomness(t,R)
 ```
 
-- Block cipher construction:
+- Block cipher construction attempts:
 
 ```
 >>> hash_testing.block_cipher_encrypt(block, key, s, t)
