@@ -43,7 +43,7 @@ Two new operations $(\gg, \ll)$ work as mirrored one way functions in $S_n$ , in
 ### Obtain hashing value of string  
   Parameters:  
   m -> String to hash  
-  s -> Block size (128,256,512,1024...)  
+  s -> Block size (128, 256, 512, 1024...)  
   t -> Factorial for embedding in the symmetric group. If s=128, then t>34.  
   p -> Prime between s and t!.    
 
