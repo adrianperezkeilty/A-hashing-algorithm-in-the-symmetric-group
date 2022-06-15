@@ -20,7 +20,7 @@
   hash_aux.py                 -> Auxiliary functions for hash_sn  
   hash_testing.py             -> Empirical tests on the S_n constructions (>>, <<)  
   two_block_attack_hash_sn.py -> Simulate 2-block attack for small sizes (16-bit, 24-bit etc),  
-  finite_field_arithmetic.py  -> compute inverses modulo a prime using Fermat's little theorem.  
+  finite_field_arithmetic.py  -> Compute inverses modulo a prime using Fermat's little theorem.  
   
   Parameters: 
   m -> String to hash  
