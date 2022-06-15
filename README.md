@@ -62,4 +62,4 @@ We develop a hashing algorithm based on these operations by encoding blocks into
   ```
 ### Empirical tests  
   
-The density distribution ${\big|[a]\big|:a\in S_n}$
+The density distribution \\{$\big|[a]\big|:a\in S_n$\\}
