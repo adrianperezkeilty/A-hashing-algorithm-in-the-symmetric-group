@@ -1,6 +1,6 @@
 # A hashing algorithm in the symmetric group
 
-Implementations based on the MSc thesis 'A hashing algorithm based on a one-way function in the symmetric group' :      
+Implementations based on the MSc thesis "A hashing algorithm based on a one-way function in the symmetric group" :      
 https://lnu.diva-portal.org/smash/record.jsf?pid=diva2%3A1662325&dswid=5727
 
 Two new operations $(\gg, \ll)$ work as mirrored one way functions in $S_n$ , in the sense that:  
