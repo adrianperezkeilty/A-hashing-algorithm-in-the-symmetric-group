@@ -60,9 +60,9 @@ We develop a hashing algorithm based on these operations by encoding blocks into
   >>> hash_sn.hash_sn(open('digest_message.txt').read(), 256, 58, p).hash()
   '94d6f93bfc4b68cc941ad6ba2a6209c5f5479df07a64fc8c093674eb760dc363'
   ```
-### Empirical tests  
+### Empirical tests (see Section 2.4 of the thesis)
   
-- The density distribution of the classes of $\big(S_n\big/\sim\big)$ (see Section 2.4 of the thesis):
+- The density distribution of the classes of $\big(S_n\big/\sim\big)$:
 ```
 >>> hash_testing.classes(t)
 ```
