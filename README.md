@@ -5,7 +5,9 @@
   The Boost library is needed for the compilation (https://www.boost.org/).
   
   Example on windows command line:  
+  
   Compilation: g++ main.cpp hash_sn.cpp -I"include" -o hash_sn.exe  
+  
   Execution:  
   C:\path> hash_sn.exe digest_message.txt  
   Reading file...  
@@ -26,7 +28,7 @@
   t -> Factorial for embedding in the symmetric group. If s=128, then t>34  
   p -> Prime between s and t!  
 
-  Execution:
+  Execution:  
   \>>> import hash_sn  
   \>>> hash_sn.hash_sn('hello',128,35,2**132-347).hash()  
   'e9aad33fac20ca525bec545487db3456' 
