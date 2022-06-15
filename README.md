@@ -66,3 +66,8 @@ We develop a hashing algorithm based on these operations by encoding blocks into
 ```
 >>> hash_testing.classes(t)
 ```
+- Test avalanche effect of ($\gg$, $\ll$). Plots $a\overset{k}{\gg}(b+i)$ for $i,k=0,1,2,3,4$:  
+
+```
+>>> hash_testing.avalanche(a, b, s, t)
+```
