@@ -2,7 +2,7 @@
 # Modular arithmetic in the multiplicative group Z_p*
 ################################################################################# 
 
-class Z_p_star:
+class field:
 
     def __init__(self,p):
         
@@ -11,7 +11,7 @@ class Z_p_star:
     # returns inverse of g modulo p (use Fermat's little theorem)
     def inverse(self,g):
         
-        return Z_p_star.fast_powering_algorithm(self,g,self.p-2)
+        return field.fast_powering_algorithm(self,g,self.p-2)
 
     # Fast powering algorithm to compute g^n (mod p)
     def fast_powering_algorithm(self,g,n):
