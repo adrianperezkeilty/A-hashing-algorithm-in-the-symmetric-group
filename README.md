@@ -7,7 +7,7 @@ Two new operations $(\gg, \ll)$ work as mirrored one way functions in $S_n$ , in
   - Given $b$ and $a\gg b$ or $b\ll a$ it is hard to retrieve $a$.  
   - $(a\gg b)\ll a = a\gg(b\ll a) = b$.
 
-We develop a hashing algorithm based on these operations by encoding blocks into permutations and exploting the algebraic incompatibility of the operations with the usual product of elements in $\mathbb Z_p^*$ .
+We develop a hashing algorithm based on these operations by encoding blocks into permutations and exploiting the algebraic incompatibility of the operations with the usual product of elements in $\mathbb Z_p^*$ .
 
 ## C++ implementation
   
