@@ -37,7 +37,7 @@ We develop a hashing algorithm based on these operations by encoding blocks into
   
   hash_sn.py                  -> Hashing algorithm    
   hash_aux.py                 -> Auxiliary functions for hash_sn  
-  hash_testing.py             -> Empirical tests on the S_n constructions $(\gg, \ll)$  
+  hash_testing.py             -> Empirical tests on the constructions $(\gg, \ll)$  
   two_block_attack_hash_sn.py -> Simulate 2-block attack for small sizes (16-bit, 24-bit etc),  
   finite_field_arithmetic.py  -> Compute inverses modulo a prime using Fermat's little theorem.  
   
