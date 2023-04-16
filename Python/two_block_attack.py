@@ -1,6 +1,7 @@
 
 import finite_field_arithmetic
 from hash_sn import *
+from hash_aux import *
 
 #################################################################################
 # 2-block Collision attack
@@ -72,15 +73,15 @@ class block_attack:
         t = self.t
 
         s_2 = s//2
-        a = int_to_per((len(m)//8)*2**s_2,t)
-        b = int_to_per(bits_to_int(''.join(m_pad[k] for k in range(length_after_pad-1,length_after_pad-s_2-1,-1)))*2**s_2,t)
-        self.h0 = a_rotate_b_inv(a,b)
+        a = en.int_to_per((len(m)//8)*2**s_2,t)
+        b = en.int_to_per(en.bits_to_int(''.join(m_pad[k] for k in range(length_after_pad-1,length_after_pad-s_2-1,-1)))*2**s_2,t)
+        self.h0 = en.a_rotate_b_inv(a,b)
 
-        if self.h0[0]%2: self.h1 = a_rotate_b_inv(self.h0,B0_per)
-        else: self.h1 = a_rotate_b(self.h0,B0_per)
+        if self.h0[0]%2: self.h1 = en.a_rotate_b_inv(self.h0,B0_per)
+        else: self.h1 = en.a_rotate_b(self.h0,B0_per)
 
-        if self.h1[1]%2: self.h2 = a_rotate_b_inv(self.h1,B1_per)
-        else: self.h2 = a_rotate_b(self.h0,B1_per)
+        if self.h1[1]%2: self.h2 = en.a_rotate_b_inv(self.h1,B1_per)
+        else: self.h2 = en.a_rotate_b(self.h0,B1_per)
 
         self.compression_counter += 3
 
@@ -111,11 +112,11 @@ class block_attack:
             return m_pad
 
         # Blocks
-        B0 = bits_to_int(m_pad[:s])
-        B1 = bits_to_int(m_pad[s:2*s])
+        B0 = en.bits_to_int(m_pad[:s])
+        B1 = en.bits_to_int(m_pad[s:2*s])
 
         length_after_pad = len(m_pad)
-        h0,h1,h2 = block_attack.first_states(self,m_pad,int_to_per(B0,t),int_to_per(B1,t),length_after_pad)
+        h0,h1,h2 = block_attack.first_states(self,m_pad, en.int_to_per(B0,t), en.int_to_per(B1,t),length_after_pad)
 
         # Loop through all blocks B0_tilde for the 2-block attack
         for i in range(2**s):
@@ -139,21 +140,21 @@ class block_attack:
             
             if result1 < 2**s:
                 
-                B0_tilde_per = int_to_per(B0_tilde,t)
-                if h0[0]%2: h1_tilde = a_rotate_b_inv(h0,B0_tilde_per)
-                else: h1_tilde = a_rotate_b(h0,B0_tilde_per)
+                B0_tilde_per = en.int_to_per(B0_tilde,t)
+                if h0[0]%2: h1_tilde = en.a_rotate_b_inv(h0,B0_tilde_per)
+                else: h1_tilde = en.a_rotate_b(h0,B0_tilde_per)
 
                 # Compute B1_tilde = (h1>>B1)<<h1_tilde = h2<<h1_tilde
                 if h1_tilde[1]%2:
-                    B1_tilde_per = a_rotate_b(h1_tilde,h2)
+                    B1_tilde_per = en.a_rotate_b(h1_tilde,h2)
                     #h2_tilde = a_rotate_b_inv(h1_tilde,B1_tilde_per)
                 else:
-                    B1_tilde_per = a_rotate_b_inv(h1_tilde,h2)
+                    B1_tilde_per = en.a_rotate_b_inv(h1_tilde,h2)
                     #h2_tilde = a_rotate_b(h1_tilde,B1_tilde_per)
 
                 self.compression_counter += 3
 
-                B1_tilde = per_to_int(B1_tilde_per,t)
+                B1_tilde = en.per_to_int(B1_tilde_per,t)
                 result2 = B1_tilde
                 
                 self.dif.append(abs(result1-result2))
@@ -179,8 +180,8 @@ def two_block_attack(s,t,p,threshold):
 
         
         # Random message with last half block fixed
-        rand_two_first_blocks = format(randint(0,2**(2*s)-1),'0'+str(2*s)+'b')
-        rand_last_half_block = format(randint(0,2**(s//2)-1),'0'+str(s//2)+'b')
+        rand_two_first_blocks = format(random.randint(0,2**(2*s)-1),'0'+str(2*s)+'b')
+        rand_last_half_block = format(random.randint(0,2**(s//2)-1),'0'+str(s//2)+'b')
         rand_m = rand_two_first_blocks + rand_last_half_block
 
         print('Attack on ',rand_m[:s],rand_m[s:2*s],rand_m[2*s:])

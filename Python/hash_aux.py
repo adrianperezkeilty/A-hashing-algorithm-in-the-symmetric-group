@@ -5,7 +5,8 @@
 
 import math
 import factoradic
-from random import randint
+import random
+import string
 
 class ut:
 
@@ -21,14 +22,14 @@ class ut:
     def random_bits(length):
         rand=''
         for i in range(length):
-            rand=rand+str(randint(0,1))
+            rand=rand+str(random.randint(0,1))
         return rand
 
     # Return random letters
     def random_letters(length):
         rand=''
         for i in range(length):
-            rand=rand+random.choice(string.ascii_letters)
+            rand=rand + random.choice(string.ascii_letters)
         return rand
 
     # Returns number of elements that differ between permutations
